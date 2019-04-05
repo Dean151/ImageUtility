@@ -55,6 +55,9 @@ extension UIImage {
         guard multiplier > 0 else {
             return nil
         }
+        guard multiplier != 1 else {
+            return self.copy() as? UIImage
+        }
         let newSize = CGSize(width: self.size.width * multiplier, height: self.size.height * multiplier)
         return scaled(to: newSize)
     }

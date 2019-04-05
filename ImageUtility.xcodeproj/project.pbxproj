@@ -12,6 +12,7 @@
 		71643E752257A24C005FD043 /* ImageUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 71643E672257A24C005FD043 /* ImageUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		71643E802257A3E8005FD043 /* Image+Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71643E7F2257A3E8005FD043 /* Image+Scale.swift */; };
 		71643E822257A9DE005FD043 /* Image+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71643E812257A9DE005FD043 /* Image+Color.swift */; };
+		719DD1752257B2B700A0F7F8 /* ImageScaleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71643E832257B163005FD043 /* ImageScaleTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,7 @@
 		71643E742257A24C005FD043 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71643E7F2257A3E8005FD043 /* Image+Scale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Scale.swift"; sourceTree = "<group>"; };
 		71643E812257A9DE005FD043 /* Image+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Color.swift"; sourceTree = "<group>"; };
+		71643E832257B163005FD043 /* ImageScaleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScaleTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				71643E722257A24C005FD043 /* ImageColorTests.swift */,
+				71643E832257B163005FD043 /* ImageScaleTests.swift */,
 				71643E742257A24C005FD043 /* Info.plist */,
 			);
 			path = Tests;
@@ -218,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				719DD1752257B2B700A0F7F8 /* ImageScaleTests.swift in Sources */,
 				71643E732257A24C005FD043 /* ImageColorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
