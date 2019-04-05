@@ -1,6 +1,6 @@
 /*
- * Created by Thomas DURAND on 05/04/2019.
- * Copyright © 2019 Thomas DURAND. All rights reserved.
+ * ImageUtilityTests.swift
+ * Created by Thomas DURAND
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
