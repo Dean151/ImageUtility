@@ -53,8 +53,8 @@
 		71643E5A2257A24C005FD043 = {
 			isa = PBXGroup;
 			children = (
-				71643E662257A24C005FD043 /* ImageUtility */,
-				71643E712257A24C005FD043 /* ImageUtilityTests */,
+				71643E662257A24C005FD043 /* Sources */,
+				71643E712257A24C005FD043 /* Tests */,
 				71643E652257A24C005FD043 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,22 +68,30 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		71643E662257A24C005FD043 /* ImageUtility */ = {
+		71643E662257A24C005FD043 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				71643E7E2257A36A005FD043 /* ImageUtility */,
 				71643E672257A24C005FD043 /* ImageUtility.h */,
 				71643E682257A24C005FD043 /* Info.plist */,
 			);
-			path = ImageUtility;
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		71643E712257A24C005FD043 /* ImageUtilityTests */ = {
+		71643E712257A24C005FD043 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				71643E722257A24C005FD043 /* ImageUtilityTests.swift */,
 				71643E742257A24C005FD043 /* Info.plist */,
 			);
-			path = ImageUtilityTests;
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		71643E7E2257A36A005FD043 /* ImageUtility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ImageUtility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
