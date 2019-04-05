@@ -38,7 +38,7 @@ extension UIImage {
      
      - Returns: An initialized UIImage object, or nil if the method could not initialize the image.
     */
-    convenience init?(filledWith color: UIColor, of size: CGSize) {
+    public convenience init?(filledWith color: UIColor, of size: CGSize) {
         UIGraphicsBeginImageContext(size)
         defer {
             UIGraphicsEndImageContext()
@@ -60,7 +60,7 @@ extension UIImage {
      
      - Returns: the average color of the image
     */
-    var averageColor: UIColor {
+    public var averageColor: UIColor {
         let colorSpace = CGColorSpaceCreateDeviceRGB()
         let bitmapInfo = CGImageAlphaInfo.premultipliedLast.rawValue
         let rect1x1 = CGRect(x: 0, y: 0, width: 1, height: 1)

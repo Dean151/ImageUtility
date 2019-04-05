@@ -38,7 +38,7 @@ extension UIImage {
      
      - Returns: A new *UIImage* instance, at the specified size.
     */
-    func scaled(to size: CGSize) -> UIImage? {
+    public func scaled(to size: CGSize) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(size, false, self.scale)
         defer {
             UIGraphicsEndImageContext()
@@ -55,7 +55,7 @@ extension UIImage {
      
      - Returns: A new *UIImage* instance, with its size multiplied by a factor, preserving the ratio
      */
-    func scaled(by multiplier: CGFloat) -> UIImage? {
+    public func scaled(by multiplier: CGFloat) -> UIImage? {
         guard multiplier > 0 else {
             return nil
         }
@@ -74,7 +74,7 @@ extension UIImage {
      
      - Returns: A new *UIImage* instance, fitting in the given size, preserving the ratio
      */
-    func scaledToFit(in size: CGSize) -> UIImage? {
+    public func scaledToFit(in size: CGSize) -> UIImage? {
         let multiplier = min(size.width / self.size.width, size.height / self.size.height)
         return scaled(by: multiplier)
     }
@@ -87,7 +87,7 @@ extension UIImage {
      
      - Returns: A new *UIImage* instance, filling in the given size, preserving the ratio
      */
-    func scaledToFill(in size: CGSize) -> UIImage? {
+    public func scaledToFill(in size: CGSize) -> UIImage? {
         let multiplier = max(size.width / self.size.width, size.height / self.size.height)
         return scaled(by: multiplier)
     }
