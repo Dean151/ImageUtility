@@ -50,4 +50,20 @@ extension UIImage {
         }
         self.init(cgImage: cgImage)
     }
+    
+    /**
+     Compute the average color of the image object
+     
+     - Returns: the average color of the image
+    */
+    var averageColor: UIColor {
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        let bitmapInfo = CGImageAlphaInfo.premultipliedLast.rawValue
+        let rect1x1 = CGRect(x: 0, y: 0, width: 1, height: 1)
+        
+        var bitmap = [UInt8](repeating: 0, count: 4)
+        let context = CGContext(data: &bitmap, width: 1, height: 1, bitsPerComponent: 8, bytesPerRow: 4, space: colorSpace, bitmapInfo: bitmapInfo)
+        context?.draw(cgImage!, in: rect1x1)
+        return UIColor(red: CGFloat(bitmap[0]) / 255.0, green: CGFloat(bitmap[1]) / 255.0, blue: CGFloat(bitmap[2]) / 255.0, alpha: CGFloat(bitmap[3]) / 255.0)
+    }
 }
