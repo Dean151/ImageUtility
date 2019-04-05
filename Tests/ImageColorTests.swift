@@ -24,25 +24,20 @@
 import XCTest
 @testable import ImageUtility
 
-class ImageUtilityTests: XCTestCase {
+class ImageColorTests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testFilledWithSizeImage() {
+        let size = CGSize(width: 12, height: 5)
+        let image = UIImage(filledWith: .white, of: size)
+        XCTAssertNotNil(image)
+        XCTAssertEqual(image?.size, size)
+        XCTAssertEqual(image?.scale, 1)
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
+    
+    func testFilledWithSizeImagePerformance() {
+        let size = CGSize(width: 1200, height: 500)
         self.measure {
-            // Put the code you want to measure the time of here.
+            _ = UIImage(filledWith: .blue, of: size)
         }
     }
 

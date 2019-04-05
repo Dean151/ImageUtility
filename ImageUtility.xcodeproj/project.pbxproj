@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		71643E6E2257A24C005FD043 /* ImageUtility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71643E642257A24C005FD043 /* ImageUtility.framework */; };
-		71643E732257A24C005FD043 /* ImageUtilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71643E722257A24C005FD043 /* ImageUtilityTests.swift */; };
+		71643E732257A24C005FD043 /* ImageColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71643E722257A24C005FD043 /* ImageColorTests.swift */; };
 		71643E752257A24C005FD043 /* ImageUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 71643E672257A24C005FD043 /* ImageUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		71643E802257A3E8005FD043 /* Image+Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71643E7F2257A3E8005FD043 /* Image+Scale.swift */; };
+		71643E822257A9DE005FD043 /* Image+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71643E812257A9DE005FD043 /* Image+Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,9 +29,10 @@
 		71643E672257A24C005FD043 /* ImageUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageUtility.h; sourceTree = "<group>"; };
 		71643E682257A24C005FD043 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71643E6D2257A24C005FD043 /* ImageUtilityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageUtilityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		71643E722257A24C005FD043 /* ImageUtilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUtilityTests.swift; sourceTree = "<group>"; };
+		71643E722257A24C005FD043 /* ImageColorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageColorTests.swift; sourceTree = "<group>"; };
 		71643E742257A24C005FD043 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71643E7F2257A3E8005FD043 /* Image+Scale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Scale.swift"; sourceTree = "<group>"; };
+		71643E812257A9DE005FD043 /* Image+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Color.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +85,7 @@
 		71643E712257A24C005FD043 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				71643E722257A24C005FD043 /* ImageUtilityTests.swift */,
+				71643E722257A24C005FD043 /* ImageColorTests.swift */,
 				71643E742257A24C005FD043 /* Info.plist */,
 			);
 			path = Tests;
@@ -92,6 +94,7 @@
 		71643E7E2257A36A005FD043 /* ImageUtility */ = {
 			isa = PBXGroup;
 			children = (
+				71643E812257A9DE005FD043 /* Image+Color.swift */,
 				71643E7F2257A3E8005FD043 /* Image+Scale.swift */,
 			);
 			path = ImageUtility;
@@ -207,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71643E802257A3E8005FD043 /* Image+Scale.swift in Sources */,
+				71643E822257A9DE005FD043 /* Image+Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,7 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71643E732257A24C005FD043 /* ImageUtilityTests.swift in Sources */,
+				71643E732257A24C005FD043 /* ImageColorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
