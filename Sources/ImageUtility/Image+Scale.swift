@@ -38,7 +38,7 @@ extension UIImage {
      
      - Returns: A new *UIImage* instance, at the specified size.
     */
-    public func scaled(to size: CGSize) -> UIImage? {
+    public func resize(to size: CGSize) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(size, false, self.scale)
         defer {
             UIGraphicsEndImageContext()
@@ -63,7 +63,7 @@ extension UIImage {
             return self.copy() as? UIImage
         }
         let newSize = CGSize(width: self.size.width * multiplier, height: self.size.height * multiplier)
-        return scaled(to: newSize)
+        return resize(to: newSize)
     }
     
     /**

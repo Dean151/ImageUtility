@@ -34,7 +34,7 @@ class ImageScaleTests: XCTestCase {
         let size = CGSize(width: 1000, height: 1000)
         let newSize = CGSize(width: 50, height: 100)
         let image = UIImage(filledWith: .white, of: size)
-        let scaled = image?.scaled(to: newSize)
+        let scaled = image?.resize(to: newSize)
         XCTAssertEqual(scaled?.size, newSize)
         XCTAssertEqual(scaled?.scale, image?.scale)
     }
@@ -77,7 +77,7 @@ class ImageScaleTests: XCTestCase {
         let newSize = CGSize(width: 50, height: 100)
         let image = UIImage(filledWith: .white, of: size)
         self.measure {
-            _ = image?.scaled(to: newSize)
+            _ = image?.resize(to: newSize)
         }
     }
 }
