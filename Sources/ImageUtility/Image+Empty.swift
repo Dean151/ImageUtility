@@ -30,7 +30,7 @@ import UIKit
 extension UIImage {
 
     /// Is true if the image only contains fully transparent pixels. False otherwise
-    var isEmpty: Bool {
+    public var isEmpty: Bool {
         guard let cgImage = self.cgImage else {
             return true
         }
