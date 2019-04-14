@@ -11,6 +11,7 @@
 - Resize the image to a specified size
 - Scale the image by a multiplier, of to fit/fill a size
 - Crop an image by a given inset, or to a given target size
+- Trim transparent pixels from an image and/or get the transparent edge insets of an image
 
 ### Requirements
 
