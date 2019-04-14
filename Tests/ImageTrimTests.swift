@@ -32,7 +32,7 @@ class ImageTrimTests: XCTestCase {
     
     func testTransparentInsets() {
         let insets = trimmableImage?.transparentInsets
-        XCTAssertEqual(insets, UIEdgeInsets(top: 100, left: 200, bottom: 600, right: 350))
+        XCTAssertEqual(insets, UIEdgeInsets(top: 100, left: 200, bottom: 1648, right: 2082))
     }
     
     func testTrimmedImage() {
@@ -47,7 +47,7 @@ class ImageTrimTests: XCTestCase {
     }
     
     var trimmableImage: UIImage? {
-        UIGraphicsBeginImageContext(CGSize(width: 1000, height: 1000))
+        UIGraphicsBeginImageContext(CGSize(width: 2732, height: 2048))
         defer {
             UIGraphicsEndImageContext()
         }

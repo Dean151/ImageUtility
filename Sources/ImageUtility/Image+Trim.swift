@@ -34,8 +34,7 @@ extension UIImage {
         guard let cgImage = self.cgImage else {
             return .zero
         }
-        
-        // Draw our image on that context
+
         let width = cgImage.width
         let height = cgImage.height
         let bitsPerComponent = MemoryLayout<UInt8>.size * 8
@@ -50,7 +49,8 @@ extension UIImage {
         }
         
         context.interpolationQuality = .low
-        
+
+        // Draw our image on that context
         let rect = CGRect(x: 0, y: 0, width: width, height: height).integral
         context.draw(cgImage, in: rect)
         

@@ -31,7 +31,7 @@ import XCTest
 class ImageColorTests: XCTestCase {
 
     func testFilledWithSizeImage() {
-        let size = CGSize(width: 100, height: 100)
+        let size = CGSize(width: 2732, height: 2048)
         let image = UIImage(filledWith: .white, of: size)
         XCTAssertNotNil(image)
         XCTAssertEqual(image?.size, size)
@@ -39,21 +39,21 @@ class ImageColorTests: XCTestCase {
     }
     
     func testFilledWithSizeImagePerformance() {
-        let size = CGSize(width: 1000, height: 1000)
+        let size = CGSize(width: 2732, height: 2048)
         self.measure {
             _ = UIImage(filledWith: .blue, of: size)
         }
     }
     
     func testAverageImageColor() {
-        let size = CGSize(width: 100, height: 100)
+        let size = CGSize(width: 2732, height: 2048)
         let color = UIColor.blue
         let image = UIImage(filledWith: color, of: size)
         XCTAssertEqual(image?.averageColor, color)
     }
     
     func testAverageImageColorPerformance() {
-        let size = CGSize(width: 1000, height: 1000)
+        let size = CGSize(width: 2732, height: 2048)
         let color = UIColor.blue
         let image = UIImage(filledWith: color, of: size)
         self.measure {

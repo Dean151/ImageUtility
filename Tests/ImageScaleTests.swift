@@ -31,7 +31,7 @@ import XCTest
 class ImageScaleTests: XCTestCase {
     
     func testScaleToImage() {
-        let size = CGSize(width: 1000, height: 1000)
+        let size = CGSize(width: 2732, height: 2048)
         let newSize = CGSize(width: 50, height: 100)
         let image = UIImage(filledWith: .white, of: size)
         let scaled = image?.resize(to: newSize)
@@ -40,16 +40,16 @@ class ImageScaleTests: XCTestCase {
     }
     
     func testScaleByImage() {
-        let size = CGSize(width: 1000, height: 100)
+        let size = CGSize(width: 2732, height: 2048)
         let image = UIImage(filledWith: .white, of: size)
         let scaled = image?.scaled(by: 3.5)
-        XCTAssertEqual(scaled?.size, CGSize(width: 3500, height: 350))
+        XCTAssertEqual(scaled?.size, CGSize(width: 9562, height: 7168))
         let scaled2 = image?.scaled(by: 0.2)
-        XCTAssertEqual(scaled2?.size, CGSize(width: 200, height: 20))
+        XCTAssertEqual(scaled2?.size, CGSize(width: 547, height: 410))
     }
     
     func testScaleByInvalidMultiplier() {
-        let size = CGSize(width: 1000, height: 100)
+        let size = CGSize(width: 2732, height: 2048)
         let image = UIImage(filledWith: .white, of: size)
         XCTAssertNil(image?.scaled(by: 0))
         XCTAssertNil(image?.scaled(by: -3))
@@ -57,23 +57,23 @@ class ImageScaleTests: XCTestCase {
     }
     
     func testScaleToFitImage() {
-        let size = CGSize(width: 1234, height: 1234)
+        let size = CGSize(width: 2732, height: 2048)
         let image = UIImage(filledWith: .white, of: size)
         let fit = CGSize(width: 100, height: 150)
         let scaled = image?.scaledToFit(in: fit)
-        XCTAssertEqual(scaled?.size, CGSize(width: 100, height: 100))
+        XCTAssertEqual(scaled?.size, CGSize(width: 100, height: 75))
     }
     
     func testScaleToFillImage() {
-        let size = CGSize(width: 1234, height: 1234)
+        let size = CGSize(width: 2732, height: 2048)
         let image = UIImage(filledWith: .white, of: size)
         let fill = CGSize(width: 200, height: 300)
         let scaled = image?.scaledToFill(in: fill)
-        XCTAssertEqual(scaled?.size, CGSize(width: 300, height: 300))
+        XCTAssertEqual(scaled?.size, CGSize(width: 401, height: 300))
     }
     
     func testScaleToImagePerformance() {
-        let size = CGSize(width: 1000, height: 1000)
+        let size = CGSize(width: 2732, height: 2048)
         let newSize = CGSize(width: 50, height: 100)
         let image = UIImage(filledWith: .white, of: size)
         self.measure {
