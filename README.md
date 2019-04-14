@@ -8,6 +8,7 @@
 
 - Generate an image using a size and a fill color.
 - Get the average color of an image
+- Check if an image is fully empty or not
 - Resize the image to a specified size
 - Scale the image by a multiplier, of to fit/fill a size
 - Crop an image by a given inset, or to a given target size

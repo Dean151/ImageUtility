@@ -18,6 +18,8 @@
 		E97D81AB2259313C00FEBF32 /* ImageCropTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D81A92259311D00FEBF32 /* ImageCropTests.swift */; };
 		E97D81AD225961EE00FEBF32 /* Image+Trim.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D81AC225961EE00FEBF32 /* Image+Trim.swift */; };
 		E97D81AF2259620000FEBF32 /* ImageTrimTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D81AE2259620000FEBF32 /* ImageTrimTests.swift */; };
+		E97D81B322638B7900FEBF32 /* Image+Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D81B222638B7900FEBF32 /* Image+Empty.swift */; };
+		E97D81B522638B9200FEBF32 /* ImageEmptyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D81B422638B9200FEBF32 /* ImageEmptyTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		E97D81A92259311D00FEBF32 /* ImageCropTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropTests.swift; sourceTree = "<group>"; };
 		E97D81AC225961EE00FEBF32 /* Image+Trim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Trim.swift"; sourceTree = "<group>"; };
 		E97D81AE2259620000FEBF32 /* ImageTrimTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTrimTests.swift; sourceTree = "<group>"; };
+		E97D81B222638B7900FEBF32 /* Image+Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Empty.swift"; sourceTree = "<group>"; };
+		E97D81B422638B9200FEBF32 /* ImageEmptyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEmptyTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 			children = (
 				71643E722257A24C005FD043 /* ImageColorTests.swift */,
 				E97D81A92259311D00FEBF32 /* ImageCropTests.swift */,
+				E97D81B422638B9200FEBF32 /* ImageEmptyTests.swift */,
 				71643E832257B163005FD043 /* ImageScaleTests.swift */,
 				E97D81AE2259620000FEBF32 /* ImageTrimTests.swift */,
 				71643E742257A24C005FD043 /* Info.plist */,
@@ -112,6 +117,7 @@
 			children = (
 				71643E812257A9DE005FD043 /* Image+Color.swift */,
 				E97D81A7225928FE00FEBF32 /* Image+Crop.swift */,
+				E97D81B222638B7900FEBF32 /* Image+Empty.swift */,
 				71643E7F2257A3E8005FD043 /* Image+Scale.swift */,
 				E97D81AC225961EE00FEBF32 /* Image+Trim.swift */,
 			);
@@ -232,6 +238,7 @@
 				E97D81AD225961EE00FEBF32 /* Image+Trim.swift in Sources */,
 				71643E822257A9DE005FD043 /* Image+Color.swift in Sources */,
 				E97D81A8225928FE00FEBF32 /* Image+Crop.swift in Sources */,
+				E97D81B322638B7900FEBF32 /* Image+Empty.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				719DD1752257B2B700A0F7F8 /* ImageScaleTests.swift in Sources */,
+				E97D81B522638B9200FEBF32 /* ImageEmptyTests.swift in Sources */,
 				E97D81AF2259620000FEBF32 /* ImageTrimTests.swift in Sources */,
 				71643E732257A24C005FD043 /* ImageColorTests.swift in Sources */,
 				E97D81AB2259313C00FEBF32 /* ImageCropTests.swift in Sources */,
