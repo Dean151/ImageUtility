@@ -71,6 +71,17 @@ class ImageScaleTests: XCTestCase {
         let scaled = try! image.scaledToFill(in: fill)
         XCTAssertEqual(scaled.size, CGSize(width: 401, height: 300))
     }
+
+    func testScaleDownOnlyImage() {
+        let size = CGSize(width: 2732, height: 2048)
+        let image = try! UIImage(filledWith: .white, of: size)
+        let fit = CGSize(width: 3000, height: 2100)
+        let fitted = try! image.scaledToFit(in: fit, scaleDownOnly: true)
+        XCTAssertEqual(fitted.size, size)
+        let fill = CGSize(width: 3000, height: 2100)
+        let filled = try! image.scaledToFill(in: fill, scaleDownOnly: true)
+        XCTAssertEqual(filled.size, size)
+    }
     
     func testScaleToImagePerformance() {
         let size = CGSize(width: 2732, height: 2048)

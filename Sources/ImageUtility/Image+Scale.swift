@@ -74,12 +74,14 @@ extension UIImage {
      UIImage original pixel scale & ratio are preserved.
      
      - Parameter size: The target size for the image to fit in
+
+     - Parameter scaleDownOnly: If true, the image will not be upscaled to fit the size
      
      - Returns: A new *UIImage* instance, fitting in the given size, preserving the ratio
      */
-    public func scaledToFit(in size: CGSize) throws -> UIImage {
+    public func scaledToFit(in size: CGSize, scaleDownOnly: Bool = false) throws -> UIImage {
         let multiplier = min(size.width / self.size.width, size.height / self.size.height)
-        return try scaled(by: multiplier)
+        return try scaled(by: scaleDownOnly && multiplier > 1 ? 1 : multiplier)
     }
     
     /**
@@ -87,11 +89,13 @@ extension UIImage {
      UIImage original pixel scale & ratio are preserved.
      
      - Parameter size: The target size for the image to fill in
+
+     - Parameter scaleDownOnly: If true, the image will not be upscaled to fill the size
      
      - Returns: A new *UIImage* instance, filling in the given size, preserving the ratio
      */
-    public func scaledToFill(in size: CGSize) throws -> UIImage {
+    public func scaledToFill(in size: CGSize, scaleDownOnly: Bool = false) throws -> UIImage {
         let multiplier = max(size.width / self.size.width, size.height / self.size.height)
-        return try scaled(by: multiplier)
+        return try scaled(by: scaleDownOnly && multiplier > 1 ? 1 : multiplier)
     }
 }
