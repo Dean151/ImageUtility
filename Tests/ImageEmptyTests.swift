@@ -31,8 +31,8 @@ import XCTest
 class ImageEmptyTests: XCTestCase {
 
     func testEmptyImage() {
-        XCTAssertFalse(opaqueImage.isEmpty)
-        XCTAssertTrue(emptyImage.isEmpty)
+        XCTAssertFalse(try! opaqueImage.isEmpty())
+        XCTAssertTrue(try! emptyImage.isEmpty())
     }
 
     func testEmptyImagePerformance() {
@@ -43,10 +43,10 @@ class ImageEmptyTests: XCTestCase {
     }
 
     var emptyImage: UIImage {
-        return UIImage(filledWith: .clear, of: CGSize(width: 2732, height: 2048))!
+        return try! UIImage(filledWith: .clear, of: CGSize(width: 2732, height: 2048))
     }
 
     var opaqueImage: UIImage {
-        return UIImage(filledWith: .blue, of: CGSize(width: 2732, height: 2048))!
+        return try! UIImage(filledWith: .blue, of: CGSize(width: 2732, height: 2048))
     }
 }

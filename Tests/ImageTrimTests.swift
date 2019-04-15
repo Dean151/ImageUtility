@@ -31,35 +31,30 @@ import XCTest
 class ImageTrimTests: XCTestCase {
     
     func testTransparentInsets() {
-        let insets = trimmableImage?.transparentInsets
+        let insets = try! trimmableImage.transparentInsets()
         XCTAssertEqual(insets, UIEdgeInsets(top: 100, left: 200, bottom: 1648, right: 2082))
     }
     
     func testTrimmedImage() {
-        let trimmed = trimmableImage?.trimmed()
-        XCTAssertEqual(trimmed?.size, CGSize(width: 450, height: 300))
+        let trimmed = try! trimmableImage.trimmed()
+        XCTAssertEqual(trimmed.size, CGSize(width: 450, height: 300))
     }
 
     func testTrimImagePerformance() {
         self.measure {
-            _ = trimmableImage?.trimmed()
+            _ = try! trimmableImage.trimmed()
         }
     }
     
-    var trimmableImage: UIImage? {
+    var trimmableImage: UIImage {
         UIGraphicsBeginImageContext(CGSize(width: 2732, height: 2048))
         defer {
             UIGraphicsEndImageContext()
         }
-        guard let ctx = UIGraphicsGetCurrentContext() else {
-            return nil
-        }
+        let ctx = UIGraphicsGetCurrentContext()!
         ctx.setFillColor(UIColor.blue.cgColor)
         ctx.fill(CGRect(x: 200, y: 100, width: 450, height: 300))
-        
-        guard let cgImage = UIGraphicsGetImageFromCurrentImageContext()?.cgImage else {
-            return nil
-        }
+        let cgImage = UIGraphicsGetImageFromCurrentImageContext()!.cgImage!
         return UIImage(cgImage: cgImage)
     }
 }

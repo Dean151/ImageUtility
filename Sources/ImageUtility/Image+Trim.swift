@@ -30,9 +30,9 @@ import UIKit
 extension UIImage {
     
     /// Return the transparent insets of the image, that could be cropped out without loosing any non-transparent pixels of the image.
-    public var transparentInsets: UIEdgeInsets {
+    public func transparentInsets() throws -> UIEdgeInsets {
         guard let cgImage = self.cgImage else {
-            return .zero
+            throw ImageUtilityErrors.noCgImage
         }
 
         let width = cgImage.width
@@ -45,7 +45,7 @@ extension UIImage {
         
         //Get a bitmap context for the image
         guard let context = CGContext(data: &bitmap, width: width, height: height, bitsPerComponent: bitsPerComponent, bytesPerRow: bytesPerRow, space: CGColorSpaceCreateDeviceGray(), bitmapInfo: CGImageAlphaInfo.alphaOnly.rawValue) else {
-            return .zero
+            throw ImageUtilityErrors.noContext
         }
         
         context.interpolationQuality = .low
@@ -80,7 +80,7 @@ extension UIImage {
      
      - Returns: An image obtained by trimming transparent edge insets.
     */
-    public func trimmed() -> UIImage? {
-        return cropping(by: transparentInsets)
+    public func trimmed() throws -> UIImage {
+        return try cropping(by: try transparentInsets())
     }
 }

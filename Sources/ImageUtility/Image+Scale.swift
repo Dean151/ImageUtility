@@ -38,13 +38,16 @@ extension UIImage {
      
      - Returns: A new *UIImage* instance, at the specified size.
     */
-    public func resize(to size: CGSize) -> UIImage? {
+    public func resize(to size: CGSize) throws -> UIImage {
         UIGraphicsBeginImageContextWithOptions(size, false, self.scale)
         defer {
             UIGraphicsEndImageContext()
         }
         self.draw(in: CGRect(origin: CGPoint.zero, size: size))
-        return UIGraphicsGetImageFromCurrentImageContext()
+        guard let image = UIGraphicsGetImageFromCurrentImageContext() else {
+            throw ImageUtilityErrors.noImageInCurrentContext
+        }
+        return image
     }
     
     /**
@@ -55,15 +58,15 @@ extension UIImage {
      
      - Returns: A new *UIImage* instance, with its size multiplied by a factor, preserving the ratio
      */
-    public func scaled(by multiplier: CGFloat) -> UIImage? {
+    public func scaled(by multiplier: CGFloat) throws -> UIImage {
         guard multiplier > 0 else {
-            return nil
+            throw ImageUtilityErrors.unvalidArgument
         }
         guard multiplier != 1 else {
-            return self.copy() as? UIImage
+            return self.copy() as! UIImage
         }
         let newSize = CGSize(width: self.size.width * multiplier, height: self.size.height * multiplier)
-        return resize(to: newSize)
+        return try resize(to: newSize)
     }
     
     /**
@@ -74,9 +77,9 @@ extension UIImage {
      
      - Returns: A new *UIImage* instance, fitting in the given size, preserving the ratio
      */
-    public func scaledToFit(in size: CGSize) -> UIImage? {
+    public func scaledToFit(in size: CGSize) throws -> UIImage {
         let multiplier = min(size.width / self.size.width, size.height / self.size.height)
-        return scaled(by: multiplier)
+        return try scaled(by: multiplier)
     }
     
     /**
@@ -87,8 +90,8 @@ extension UIImage {
      
      - Returns: A new *UIImage* instance, filling in the given size, preserving the ratio
      */
-    public func scaledToFill(in size: CGSize) -> UIImage? {
+    public func scaledToFill(in size: CGSize) throws -> UIImage {
         let multiplier = max(size.width / self.size.width, size.height / self.size.height)
-        return scaled(by: multiplier)
+        return try scaled(by: multiplier)
     }
 }

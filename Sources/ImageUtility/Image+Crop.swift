@@ -68,7 +68,7 @@ extension UIImage {
      
      - Returns: A new *UIImage* instance, cropped
      */
-    public func cropping(to size: CGSize, position: CroppingPosition = .center) -> UIImage? {
+    public func cropping(to size: CGSize, position: CroppingPosition = .center) throws -> UIImage {
         let top, left, bottom, right: CGFloat
         
         switch position {
@@ -98,7 +98,7 @@ extension UIImage {
         }
         
         let insets = UIEdgeInsets(top: top, left: left, bottom: bottom, right: right)
-        return cropping(by: insets)
+        return try cropping(by: insets)
     }
     
     /**
@@ -108,13 +108,13 @@ extension UIImage {
      
      - Returns: A new *UIImage* instance, cropped
      */
-    public func cropping(by edgeInsets: UIEdgeInsets) -> UIImage? {
+    public func cropping(by edgeInsets: UIEdgeInsets) throws -> UIImage {
         var rect = CGRect(origin: .zero, size: self.size)
         rect.origin.x += edgeInsets.left
         rect.origin.y += edgeInsets.top
         rect.size.width -= edgeInsets.left + edgeInsets.right
         rect.size.height -= edgeInsets.top + edgeInsets.bottom
-        return cropping(to: rect)
+        return try cropping(to: rect)
     }
     
     /**
@@ -124,9 +124,9 @@ extension UIImage {
      
      - Returns: A new *UIImage* instance, cropped
      */
-    public func cropping(to rect: CGRect) -> UIImage? {
+    public func cropping(to rect: CGRect) throws -> UIImage {
         guard let cgImage = self.cgImage?.cropping(to: rect) else {
-            return nil
+            throw ImageUtilityErrors.noCgImage
         }
         return UIImage(cgImage: cgImage, scale: scale, orientation: imageOrientation)
     }

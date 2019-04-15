@@ -30,9 +30,9 @@ import UIKit
 extension UIImage {
 
     /// Is true if the image only contains fully transparent pixels. False otherwise
-    public var isEmpty: Bool {
+    public func isEmpty() throws -> Bool {
         guard let cgImage = self.cgImage else {
-            return true
+            throw ImageUtilityErrors.noCgImage
         }
 
         let width = cgImage.width
@@ -45,7 +45,7 @@ extension UIImage {
 
         //Get a bitmap context for the image
         guard let context = CGContext(data: &bitmap, width: width, height: height, bitsPerComponent: bitsPerComponent, bytesPerRow: bytesPerRow, space: CGColorSpaceCreateDeviceGray(), bitmapInfo: CGImageAlphaInfo.alphaOnly.rawValue) else {
-            return true
+            throw ImageUtilityErrors.noContext
         }
 
         context.interpolationQuality = .low

@@ -38,19 +38,19 @@ extension UIImage {
      
      - Returns: An initialized UIImage object, or nil if the method could not initialize the image.
     */
-    public convenience init?(filledWith color: UIColor, of size: CGSize) {
+    public convenience init(filledWith color: UIColor, of size: CGSize) throws {
         UIGraphicsBeginImageContext(size)
         defer {
             UIGraphicsEndImageContext()
         }
         guard let ctx = UIGraphicsGetCurrentContext() else {
-            return nil
+            throw ImageUtilityErrors.noContext
         }
         ctx.setFillColor(color.cgColor)
         ctx.fill(CGRect(origin: CGPoint.zero, size: size))
         
         guard let cgImage = UIGraphicsGetImageFromCurrentImageContext()?.cgImage else {
-            return nil
+            throw ImageUtilityErrors.noContext
         }
         self.init(cgImage: cgImage)
     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71131DFB2264C7580077BA40 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71131DFA2264C7580077BA40 /* Errors.swift */; };
 		71643E6E2257A24C005FD043 /* ImageUtility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71643E642257A24C005FD043 /* ImageUtility.framework */; };
 		71643E732257A24C005FD043 /* ImageColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71643E722257A24C005FD043 /* ImageColorTests.swift */; };
 		71643E752257A24C005FD043 /* ImageUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 71643E672257A24C005FD043 /* ImageUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		71131DFA2264C7580077BA40 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		71643E642257A24C005FD043 /* ImageUtility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ImageUtility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71643E672257A24C005FD043 /* ImageUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageUtility.h; sourceTree = "<group>"; };
 		71643E682257A24C005FD043 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 		71643E7E2257A36A005FD043 /* ImageUtility */ = {
 			isa = PBXGroup;
 			children = (
+				71131DFA2264C7580077BA40 /* Errors.swift */,
 				71643E812257A9DE005FD043 /* Image+Color.swift */,
 				E97D81A7225928FE00FEBF32 /* Image+Crop.swift */,
 				E97D81B222638B7900FEBF32 /* Image+Empty.swift */,
@@ -238,6 +241,7 @@
 				E97D81AD225961EE00FEBF32 /* Image+Trim.swift in Sources */,
 				71643E822257A9DE005FD043 /* Image+Color.swift in Sources */,
 				E97D81A8225928FE00FEBF32 /* Image+Crop.swift in Sources */,
+				71131DFB2264C7580077BA40 /* Errors.swift in Sources */,
 				E97D81B322638B7900FEBF32 /* Image+Empty.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

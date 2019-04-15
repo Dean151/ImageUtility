@@ -33,27 +33,27 @@ class ImageCropTests: XCTestCase {
     func testCropImageToSize() {
         let size = CGSize(width: 1000, height: 1000)
         let newSize = CGSize(width: 50, height: 100)
-        let image = UIImage(filledWith: .white, of: size)
-        let cropped = image?.cropping(to: newSize)
-        XCTAssertEqual(cropped?.size, newSize)
-        XCTAssertEqual(cropped?.scale, image?.scale)
+        let image = try! UIImage(filledWith: .white, of: size)
+        let cropped = try! image.cropping(to: newSize)
+        XCTAssertEqual(cropped.size, newSize)
+        XCTAssertEqual(cropped.scale, image.scale)
     }
     
     func testCropImageByInsets() {
         let size = CGSize(width: 1000, height: 600)
         let insets = UIEdgeInsets(top: 100, left: 100, bottom: 100, right: 100)
-        let image = UIImage(filledWith: .white, of: size)
-        let cropped = image?.cropping(by: insets)
-        XCTAssertEqual(cropped?.size, CGSize(width: 800, height: 400))
-        XCTAssertEqual(cropped?.scale, image?.scale)
+        let image = try! UIImage(filledWith: .white, of: size)
+        let cropped = try! image.cropping(by: insets)
+        XCTAssertEqual(cropped.size, CGSize(width: 800, height: 400))
+        XCTAssertEqual(cropped.scale, image.scale)
     }
     
     func testCropImagePerformance() {
         let size = CGSize(width: 1000, height: 1000)
         let rect = CGRect(x: 450, y: 450, width: 100, height: 100)
-        let image = UIImage(filledWith: .white, of: size)
+        let image = try! UIImage(filledWith: .white, of: size)
         self.measure {
-            _ = image?.cropping(to: rect)
+            _ = try! image.cropping(to: rect)
         }
     }
 }
