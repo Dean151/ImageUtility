@@ -34,15 +34,33 @@ class ImageTrimTests: XCTestCase {
         let insets = try! trimmableImage.transparentInsets()
         XCTAssertEqual(insets, UIEdgeInsets(top: 100, left: 200, bottom: 1648, right: 2082))
     }
+
+    func testTransparentInsetsWithScale() {
+        let insets = try! trimmableImageWithScale.transparentInsets()
+        XCTAssertEqual(insets, UIEdgeInsets(top: 272.5, left: 195.5, bottom: 219, right: 502))
+    }
     
     func testTrimmedImage() {
         let trimmed = try! trimmableImage.trimmed()
         XCTAssertEqual(trimmed.size, CGSize(width: 450, height: 300))
     }
 
+    func testTrimmedImageWithScale() {
+        let trimmed = try! trimmableImageWithScale.trimmed()
+        XCTAssertFalse(try! trimmed.isEmpty())
+        XCTAssertEqual(trimmed.scale, 2)
+        XCTAssertEqual(trimmed.size, CGSize(width: 396.5, height: 268.5))
+    }
+
     func testTrimImagePerformance() {
         self.measure {
             _ = try! trimmableImage.trimmed()
+        }
+    }
+
+    func testTrimImageWithScalePerformance() {
+        self.measure {
+            _ = try! trimmableImageWithScale.trimmed()
         }
     }
     
@@ -56,5 +74,11 @@ class ImageTrimTests: XCTestCase {
         ctx.fill(CGRect(x: 200, y: 100, width: 450, height: 300))
         let cgImage = UIGraphicsGetImageFromCurrentImageContext()!.cgImage!
         return UIImage(cgImage: cgImage)
+    }
+
+    var trimmableImageWithScale: UIImage {
+        let imageUrl = Bundle(for: type(of: self)).url(forResource: "image", withExtension: "png")!
+        let data = try! Data(contentsOf: imageUrl)
+        return UIImage(data: data, scale: 2)!
     }
 }

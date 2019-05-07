@@ -109,11 +109,11 @@ extension UIImage {
      - Returns: A new *UIImage* instance, cropped
      */
     public func cropping(by edgeInsets: UIEdgeInsets) throws -> UIImage {
-        var rect = CGRect(origin: .zero, size: self.size)
-        rect.origin.x += edgeInsets.left
-        rect.origin.y += edgeInsets.top
-        rect.size.width -= edgeInsets.left + edgeInsets.right
-        rect.size.height -= edgeInsets.top + edgeInsets.bottom
+        var rect = CGRect(origin: .zero, size: CGSize(width: self.size.width * self.scale, height: self.size.height * self.scale))
+        rect.origin.x += edgeInsets.left * self.scale
+        rect.origin.y += edgeInsets.top * self.scale
+        rect.size.width -= (edgeInsets.left + edgeInsets.right) * self.scale
+        rect.size.height -= (edgeInsets.top + edgeInsets.bottom) * self.scale
         return try cropping(to: rect)
     }
     

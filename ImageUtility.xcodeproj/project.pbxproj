@@ -13,6 +13,7 @@
 		71643E752257A24C005FD043 /* ImageUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 71643E672257A24C005FD043 /* ImageUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		71643E802257A3E8005FD043 /* Image+Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71643E7F2257A3E8005FD043 /* Image+Scale.swift */; };
 		71643E822257A9DE005FD043 /* Image+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71643E812257A9DE005FD043 /* Image+Color.swift */; };
+		71649FEA2281AC78009D5776 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 71649FE82281AC78009D5776 /* image.png */; };
 		719DD1752257B2B700A0F7F8 /* ImageScaleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71643E832257B163005FD043 /* ImageScaleTests.swift */; };
 		E937402B225800E500E9171A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E9374029225800E500E9171A /* README.md */; };
 		E97D81A8225928FE00FEBF32 /* Image+Crop.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D81A7225928FE00FEBF32 /* Image+Crop.swift */; };
@@ -44,6 +45,7 @@
 		71643E7F2257A3E8005FD043 /* Image+Scale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Scale.swift"; sourceTree = "<group>"; };
 		71643E812257A9DE005FD043 /* Image+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Color.swift"; sourceTree = "<group>"; };
 		71643E832257B163005FD043 /* ImageScaleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScaleTests.swift; sourceTree = "<group>"; };
+		71649FE82281AC78009D5776 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
 		E9374029225800E500E9171A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E97D81A7225928FE00FEBF32 /* Image+Crop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Crop.swift"; sourceTree = "<group>"; };
 		E97D81A92259311D00FEBF32 /* ImageCropTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropTests.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 		71643E712257A24C005FD043 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				71649FE72281AC4A009D5776 /* TestImages */,
 				71643E722257A24C005FD043 /* ImageColorTests.swift */,
 				E97D81A92259311D00FEBF32 /* ImageCropTests.swift */,
 				E97D81B422638B9200FEBF32 /* ImageEmptyTests.swift */,
@@ -125,6 +128,14 @@
 				E97D81AC225961EE00FEBF32 /* Image+Trim.swift */,
 			);
 			path = ImageUtility;
+			sourceTree = "<group>";
+		};
+		71649FE72281AC4A009D5776 /* TestImages */ = {
+			isa = PBXGroup;
+			children = (
+				71649FE82281AC78009D5776 /* image.png */,
+			);
+			path = TestImages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71649FEA2281AC78009D5776 /* image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
