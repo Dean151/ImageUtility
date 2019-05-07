@@ -124,10 +124,10 @@ extension UIImage {
      
      - Returns: A new *UIImage* instance, cropped
      */
-    public func cropping(to rect: CGRect) throws -> UIImage {
+    public func cropping(to rect: CGRect, at scale: CGFloat? = nil) throws -> UIImage {
         guard let cgImage = self.cgImage?.cropping(to: rect) else {
             throw ImageUtilityErrors.noCgImage
         }
-        return UIImage(cgImage: cgImage, scale: scale, orientation: imageOrientation)
+        return UIImage(cgImage: cgImage, scale: self.scale, orientation: imageOrientation)
     }
 }
