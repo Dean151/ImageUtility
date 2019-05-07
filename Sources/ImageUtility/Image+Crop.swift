@@ -121,6 +121,8 @@ extension UIImage {
      Create a new *UIImage* instance cropped to the given rect
      
      - Parameter rect: The rect to crop the image in
+
+     - Parameter scale: The scale for the produced image context. If omited, the value of the UIImage is used instead
      
      - Returns: A new *UIImage* instance, cropped
      */
@@ -128,6 +130,6 @@ extension UIImage {
         guard let cgImage = self.cgImage?.cropping(to: rect) else {
             throw ImageUtilityErrors.noCgImage
         }
-        return UIImage(cgImage: cgImage, scale: self.scale, orientation: imageOrientation)
+        return UIImage(cgImage: cgImage, scale: scale ?? self.scale, orientation: imageOrientation)
     }
 }

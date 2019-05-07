@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "ImageUtility"
-  spec.version      = "0.3.0"
+  spec.version      = "0.3.1"
   spec.summary      = "Helpers functions performing image operations for iOS."
   spec.description  = "Utilities function for UIImage : Scale, Colors, ... and many more to come!"
   spec.homepage     = "https://github.com/Dean151/ImageUtility"
