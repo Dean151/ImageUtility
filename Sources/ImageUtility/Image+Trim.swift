@@ -68,10 +68,10 @@ extension UIImage {
             }
         }
         
-        let top = CGFloat(rowSum.firstIndex(where: { $0 > 0 }) ?? 0)
-        let left = CGFloat(colSum.firstIndex(where: { $0 > 0 }) ?? 0)
-        let bottom = CGFloat(height - (rowSum.lastIndex(where: { $0 > 0 }) ?? 1) - 1)
-        let right = CGFloat(width - (colSum.lastIndex(where: { $0 > 0 }) ?? 1) - 1)
+        let top = CGFloat(rowSum.firstIndex(where: { $0 > 0 }) ?? 0) / self.scale
+        let left = CGFloat(colSum.firstIndex(where: { $0 > 0 }) ?? 0) / self.scale
+        let bottom = CGFloat(height - (rowSum.lastIndex(where: { $0 > 0 }) ?? 1) - 1) / self.scale
+        let right = CGFloat(width - (colSum.lastIndex(where: { $0 > 0 }) ?? 1) - 1) / self.scale
         return UIEdgeInsets(top: top, left: left, bottom: bottom, right: right)
     }
     

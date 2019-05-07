@@ -122,14 +122,12 @@ extension UIImage {
      
      - Parameter rect: The rect to crop the image in
 
-     - Parameter scale: The scale for the produced image context. If omited, the value of the UIImage is used instead
-     
      - Returns: A new *UIImage* instance, cropped
      */
-    public func cropping(to rect: CGRect, at scale: CGFloat? = nil) throws -> UIImage {
+    public func cropping(to rect: CGRect) throws -> UIImage {
         guard let cgImage = self.cgImage?.cropping(to: rect) else {
             throw ImageUtilityErrors.noCgImage
         }
-        return UIImage(cgImage: cgImage, scale: scale ?? self.scale, orientation: imageOrientation)
+        return UIImage(cgImage: cgImage, scale: scale, orientation: imageOrientation)
     }
 }
