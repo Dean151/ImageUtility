@@ -91,4 +91,14 @@ class ImageScaleTests: XCTestCase {
             _ = try! image.resize(to: newSize)
         }
     }
+
+    static var allTests = [
+        ("testScaleToImage", testScaleToImage),
+        ("testScaleByImage", testScaleByImage),
+        ("testScaleByInvalidMultiplier", testScaleByInvalidMultiplier),
+        ("testScaleToFitImage", testScaleToFitImage),
+        ("testScaleToFillImage", testScaleToFillImage),
+        ("testScaleDownOnlyImage", testScaleDownOnlyImage),
+        ("testScaleToImagePerformance", testScaleToImagePerformance),
+    ]
 }

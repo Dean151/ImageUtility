@@ -85,7 +85,7 @@
 				7181676223291DB9006E1D20 /* Package.swift */,
 				7181676523291E11006E1D20 /* ImageUtility.podspec */,
 				71643E662257A24C005FD043 /* Sources */,
-				71643E712257A24C005FD043 /* Tests */,
+				7181676623291FC3006E1D20 /* Tests */,
 				71643E652257A24C005FD043 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -109,7 +109,7 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		71643E712257A24C005FD043 /* Tests */ = {
+		71643E712257A24C005FD043 /* ImageUtilityTests */ = {
 			isa = PBXGroup;
 			children = (
 				71649FE72281AC4A009D5776 /* TestImages */,
@@ -120,7 +120,7 @@
 				E97D81AE2259620000FEBF32 /* ImageTrimTests.swift */,
 				71643E742257A24C005FD043 /* Info.plist */,
 			);
-			path = Tests;
+			path = ImageUtilityTests;
 			sourceTree = "<group>";
 		};
 		71643E7E2257A36A005FD043 /* ImageUtility */ = {
@@ -142,6 +142,14 @@
 				71649FE82281AC78009D5776 /* image.png */,
 			);
 			path = TestImages;
+			sourceTree = "<group>";
+		};
+		7181676623291FC3006E1D20 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				71643E712257A24C005FD043 /* ImageUtilityTests */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

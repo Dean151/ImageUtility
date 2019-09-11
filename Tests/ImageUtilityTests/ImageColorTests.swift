@@ -61,4 +61,10 @@ class ImageColorTests: XCTestCase {
         }
     }
 
+    static var allTests = [
+        ("testFilledWithSizeImage", testFilledWithSizeImage),
+        ("testFilledWithSizeImagePerformance", testFilledWithSizeImagePerformance),
+        ("testAverageImageColor", testAverageImageColor),
+        ("testAverageImageColorPerformance", testAverageImageColorPerformance),
+    ]
 }

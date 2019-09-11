@@ -81,4 +81,13 @@ class ImageTrimTests: XCTestCase {
         let data = try! Data(contentsOf: imageUrl)
         return UIImage(data: data, scale: 2)!
     }
+
+    static var allTests = [
+        ("testTransparentInsets", testTransparentInsets),
+        ("testTransparentInsetsWithScale", testTransparentInsetsWithScale),
+        ("testTrimmedImage", testTrimmedImage),
+        ("testTrimmedImageWithScale", testTrimmedImageWithScale),
+        ("testTrimImagePerformance", testTrimImagePerformance),
+        ("testTrimImageWithScalePerformance", testTrimImageWithScalePerformance),
+    ]
 }

@@ -56,4 +56,11 @@ class ImageCropTests: XCTestCase {
             _ = try! image.cropping(to: rect)
         }
     }
+
+    static var allTests = [
+        ("testCropImageToSize", testCropImageToSize),
+        ("testCropImageByInsets", testCropImageByInsets),
+        ("testCropImagePerformance", testCropImagePerformance),
+    ]
+
 }

@@ -49,4 +49,9 @@ class ImageEmptyTests: XCTestCase {
     var opaqueImage: UIImage {
         return try! UIImage(filledWith: .blue, of: CGSize(width: 2732, height: 2048))
     }
+
+    static var allTests = [
+        ("testEmptyImage", testEmptyImage),
+        ("testEmptyImagePerformance", testEmptyImagePerformance),
+    ]
 }
