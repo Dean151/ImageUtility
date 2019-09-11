@@ -3,5 +3,5 @@ os:
 language: swift
 xcode_project: ImageUtility.xcodeproj
 xcode_scheme: ImageUtility
-osx_image: xcode10.2
-xcode_destination: platform=iOS Simulator,OS=12.2,name=iPhone X
+osx_image: xcode11
+xcode_destination: platform=iOS Simulator,OS=13.0,name=iPhone X
