@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "ImageUtility"
-  spec.version      = "0.3.5"
+  spec.version      = "0.3.6"
   spec.summary      = "Helpers functions performing image operations for iOS."
 
   spec.description  = <<-DESC
@@ -15,7 +15,7 @@ Pod::Spec.new do |spec|
   spec.author             = { "Thomas Durand" => "contact@thomasdurand.fr" }
   spec.social_media_url   = "https://twitter.com/deanatoire"
 
-  spec.platform     = :ios, "8.0"
+  spec.platform     = :ios, "9.0"
 
   spec.swift_version = '5.0'
 

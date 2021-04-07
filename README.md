@@ -16,7 +16,7 @@
 
 ### Requirements
 
-This library support iOS >= 8.0, but requires Xcode >= 10.2 since it's builded with Swift 5
+This library support iOS >= 9.0, but requires Xcode >= 10.2 since it's builded with Swift 5
 
 ### Installation
 
